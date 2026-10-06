@@ -6,7 +6,7 @@ This Final-Year Engineering Project presents an intelligent protection approach 
 
 The system was developed in **MATLAB/Simulink** using **Artificial Neural Networks (ANNs)**. It uses electrical measurements from the two three-phase circuits and addresses the additional complexity caused by **mutual electromagnetic coupling** between the circuits.
 
-![Simulink Model](image.png)
+![Simulink Model](images/Simulink_Model.png)
 
 ## Integrated Protection System
 
@@ -14,7 +14,7 @@ The three trained ANN models are integrated into a unified MATLAB/Simulink prote
 
 **RMS Signal Processing → Fault Detector → Fault Classifier → Fault Localizer**
 
-![Integrated Protection System](images/Figure%204.19%20.png)
+![Integrated Protection System](images/Integrated_Protection_System.png)
 
 ## System Specifications
 
@@ -56,10 +56,10 @@ The classifier covers ten fault categories:
 
 ## Project Files
 
-- [MATLAB/Simulink Model](PFE_2Lignes_RNA%20%282%29.slx)
-- [Fault Detector](RNA_Detecteur_100km%20%283%29.mat)
-- [Fault Classifier](RNA_Classificateur_100km%20%283%29.mat)
-- [Fault Localizer](RNA_Localisateur_100km%20%283%29.mat)
+- [MATLAB/Simulink Model](models/PFE_2Lignes_RNA%20%282%29.slx)
+- [Fault Detector](neural_networks/RNA_Detecteur_100km%20%283%29.mat)
+- [Fault Classifier](neural_networks/RNA_Classificateur_100km%20%283%29.mat)
+- [Fault Localizer](neural_networks/RNA_Localisateur_100km%20%283%29.mat)
 
 ## Tools & Technologies
 
