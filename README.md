@@ -71,9 +71,9 @@ Main MATLAB/Simulink model used for the electrical system and fault simulations.
 
 The trained neural network models are provided as MATLAB `.mat` files:
 
-* `RNA_Detecteur_100km.mat`
-* `RNA_Classificateur_100km.mat`
-* `RNA_Localisateur_100km.mat`
+RNA_Detecteur_100km (3).mat
+RNA_Classificateur_100km (3).mat
+RNA_Localisateur_100km (3).mat
 
 ## Tools and Technologies
 
