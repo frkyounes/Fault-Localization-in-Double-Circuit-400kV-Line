@@ -1,12 +1,12 @@
 # Fault Detection, Classification and Localization in a 400 kV Double-Circuit Transmission Line
 
 ## Overview
-
 This project presents the development of an intelligent system for the detection, classification, and localization of electrical faults in a 400 kV double-circuit transmission line.
 
 The system is developed and simulated using MATLAB/Simulink and Artificial Neural Networks (ANNs).
 
 The study focuses on the challenges associated with fault analysis in double-circuit transmission lines, particularly the influence of mutual coupling between the two circuits.
+![Simulink Model](image.png)
 
 ## System Description
 
