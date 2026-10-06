@@ -42,24 +42,23 @@ The project follows the following general approach:
 7. Fault classification.
 8. Fault localization.
 9. Analysis of the obtained results.
-
 ## Neural Network Models
 
 Three neural network models are used in the project:
 
-### Fault Detector
+- **Fault Detector** – detects the presence of a fault and identifies the affected circuit.
+- **Fault Classifier** – identifies the fault type.
+- **Fault Localizer** – estimates the fault distance along the transmission line.
 
-Determines whether a fault is present in the transmission system.
+## Key Results
 
-### Fault Classifier
+The three ANN models achieved strong performance on the simulated dataset:
 
-Identifies the fault condition and the affected circuit.
+- **Fault Detector:** 12-20-10-2 architecture, validation MSE of `1.885 × 10⁻⁶`, with `R = 1.000` on validation and test data.
+- **Fault Classifier:** 12-40-20-10 architecture, validation MSE of `1.247 × 10⁻⁵`, with `R = 0.99992` on validation data.
+- **Fault Localizer:** 12-50-25-10-1 architecture, validation MSE of `0.317 km²`, with `R = 0.99978` on validation data.
 
-### Fault Localizer
-
-Estimates the distance of the fault along the transmission line.
-
-## Project Files
+The integrated system was also evaluated on representative fault scenarios. The majority of estimated fault locations showed an error below 1 km.
 
 ### Simulink Model
 
