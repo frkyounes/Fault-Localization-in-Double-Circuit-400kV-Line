@@ -6,7 +6,14 @@ This project presents the development of an intelligent system for the detection
 The system is developed and simulated using MATLAB/Simulink and Artificial Neural Networks (ANNs).
 
 The study focuses on the challenges associated with fault analysis in double-circuit transmission lines, particularly the influence of mutual coupling between the two circuits.
+
 ![Simulink Model](image.png)
+
+## Integrated Protection System
+
+The three ANN models are integrated into a unified MATLAB/Simulink protection system for fault detection, classification, and localization.
+
+![Integrated Protection System](images/Figure%204.19%20.png)
 
 ## System Description
 
@@ -70,9 +77,9 @@ Main MATLAB/Simulink model used for the electrical system and fault simulations.
 
 The trained neural network models are provided as MATLAB `.mat` files:
 
-RNA_Detecteur_100km (3).mat
-RNA_Classificateur_100km (3).mat
-RNA_Localisateur_100km (3).mat
+- `RNA_Detecteur_100km (3).mat`
+- `RNA_Classificateur_100km (3).mat`
+- `RNA_Localisateur_100km (3).mat`
 
 ## Tools and Technologies
 
