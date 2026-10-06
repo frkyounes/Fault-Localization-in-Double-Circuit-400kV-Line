@@ -1,113 +1,91 @@
 # Fault Detection, Classification and Localization in a 400 kV Double-Circuit Transmission Line
 
-## Overview
-This project presents the development of an intelligent system for the detection, classification, and localization of electrical faults in a 400 kV double-circuit transmission line.
+## Project Overview
 
-The system is developed and simulated using MATLAB/Simulink and Artificial Neural Networks (ANNs).
+This Final-Year Engineering Project presents an intelligent protection approach for **fault detection, classification, and localization** in a **400 kV, 50 Hz, 100 km double-circuit transmission line**.
 
-The study focuses on the challenges associated with fault analysis in double-circuit transmission lines, particularly the influence of mutual coupling between the two circuits.
+The system was developed in **MATLAB/Simulink** using **Artificial Neural Networks (ANNs)**. It uses electrical measurements from the two three-phase circuits and addresses the additional complexity caused by **mutual electromagnetic coupling** between the circuits.
 
 ![Simulink Model](image.png)
 
 ## Integrated Protection System
 
-The three ANN models are integrated into a unified MATLAB/Simulink protection system for fault detection, classification, and localization.
+The three trained ANN models are integrated into a unified MATLAB/Simulink protection system:
+
+**RMS Signal Processing → Fault Detector → Fault Classifier → Fault Localizer**
 
 ![Integrated Protection System](images/Figure%204.19%20.png)
 
-## System Description
+## System Specifications
 
-The simulated transmission system is characterized by:
-
-* Voltage level: 400 kV
-* Frequency: 50 Hz
-* Transmission line length: 100 km
-* Configuration: Double-circuit transmission line
-* Simulation environment: MATLAB/Simulink
-* Intelligent technique: Artificial Neural Networks (ANNs)
-
-## Objectives
-
-The main objectives of the project are:
-
-* Detect the occurrence of an electrical fault.
-* Classify the type of fault.
-* Identify the affected transmission circuit.
-* Estimate the location of the fault along the transmission line.
-* Develop an intelligent approach based on Artificial Neural Networks.
+| Parameter | Value |
+|---|---|
+| Voltage level | 400 kV |
+| Frequency | 50 Hz |
+| Line length | 100 km |
+| Configuration | Double circuit, three-phase |
+| Simulation | MATLAB / Simulink |
+| AI technique | Artificial Neural Networks |
+| Simulation scenarios | 1,750 |
 
 ## Methodology
 
-The project follows the following general approach:
+1. Model the 400 kV double-circuit transmission line.
+2. Generate a database of fault scenarios with different fault types, locations, and fault resistances.
+3. Acquire and process electrical voltage and current signals.
+4. Calculate RMS quantities used as ANN inputs.
+5. Train three ANN models for detection, classification, and localization.
+6. Integrate the trained models into the Simulink protection system.
+7. Validate the complete system on representative fault cases.
 
-1. Modeling of the 400 kV double-circuit transmission line in MATLAB/Simulink.
-2. Generation of different fault scenarios.
-3. Acquisition and processing of electrical signals.
-4. Development of a database representing different fault conditions.
-5. Training of Artificial Neural Network models.
-6. Fault detection.
-7. Fault classification.
-8. Fault localization.
-9. Analysis of the obtained results.
-## Neural Network Models
+## ANN Models
 
-Three neural network models are used in the project:
+| Model | Function | Architecture | Validation performance |
+|---|---|---|---|
+| **Fault Detector** | Detects a fault and identifies the affected circuit | 12-20-10-2 | MSE = 1.885 × 10⁻⁶, R = 1.000 |
+| **Fault Classifier** | Identifies the fault type | 12-40-20-10 | MSE = 1.247 × 10⁻⁵, R = 0.99992 |
+| **Fault Localizer** | Estimates the fault distance | 12-50-25-10-1 | MSE = 0.317 km², R = 0.99978 |
 
-- **Fault Detector** – detects the presence of a fault and identifies the affected circuit.
-- **Fault Classifier** – identifies the fault type.
-- **Fault Localizer** – estimates the fault distance along the transmission line.
+The integrated system was evaluated on representative fault cases. The **majority of localization errors were below 1 km**, with larger errors occurring in some high-impedance fault cases.
 
-## Key Results
+## Fault Categories
 
-The three ANN models achieved strong performance on the simulated dataset:
+The classifier covers ten fault categories:
 
-- **Fault Detector:** 12-20-10-2 architecture, validation MSE of `1.885 × 10⁻⁶`, with `R = 1.000` on validation and test data.
-- **Fault Classifier:** 12-40-20-10 architecture, validation MSE of `1.247 × 10⁻⁵`, with `R = 0.99992` on validation data.
-- **Fault Localizer:** 12-50-25-10-1 architecture, validation MSE of `0.317 km²`, with `R = 0.99978` on validation data.
+**AG, BG, CG, AB, BC, AC, ABG, BCG, ACG, ABC**
 
-The integrated system was also evaluated on representative fault scenarios. The majority of estimated fault locations showed an error below 1 km.
+## Project Files
 
-### Simulink Model
+- [MATLAB/Simulink Model](PFE_2Lignes_RNA%20%282%29.slx)
+- [Fault Detector](RNA_Detecteur_100km%20%283%29.mat)
+- [Fault Classifier](RNA_Classificateur_100km%20%283%29.mat)
+- [Fault Localizer](RNA_Localisateur_100km%20%283%29.mat)
 
-`PFE_2Lignes_RNA (2).slx`
+## Tools & Technologies
 
-Main MATLAB/Simulink model used for the electrical system and fault simulations.
-
-### Neural Network Models
-
-The trained neural network models are provided as MATLAB `.mat` files:
-
-- `RNA_Detecteur_100km (3).mat`
-- `RNA_Classificateur_100km (3).mat`
-- `RNA_Localisateur_100km (3).mat`
-
-## Tools and Technologies
-
-* MATLAB
-* Simulink
-* Artificial Neural Networks
-* Power System Modeling
-* Electrical Fault Analysis
-* Transmission Line Protection
+- MATLAB
+- Simulink
+- Artificial Neural Networks
+- Electrical Power Systems
+- Transmission Line Protection
+- Fault Analysis
+- Signal Processing
 
 ## Project Context
 
-This work was carried out as a Final-Year Engineering Project in Electrical Engineering, with a specialization in Electrical Networks.
+This project was carried out as a **Final-Year Engineering Project in Electrical Engineering – Electrical Networks**.
 
-The project combines electrical power system modeling, protection, fault analysis, signal processing, and artificial intelligence.
+It combines **power-system modeling, transmission-line protection, electrical fault analysis, signal processing, and artificial intelligence**.
 
-## Future Improvements
+## Future Work
 
-Possible future developments include:
-
-* Testing the models under a wider range of operating conditions.
-* Improving fault localization accuracy.
-* Evaluating the influence of measurement noise.
-* Testing the approach on more complex network configurations.
-* Exploring other machine learning and deep learning techniques.
+- Expand the simulation database and operating conditions.
+- Improve localization accuracy for difficult fault cases.
+- Evaluate robustness against measurement noise.
+- Test additional transmission-line configurations.
+- Investigate advanced machine-learning and deep-learning methods.
 
 ## Author
 
-**Younes Ferkous**
-
+**Younes Ferkous**  
 Electrical Engineering – Electrical Networks
